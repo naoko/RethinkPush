@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.13.0/css/semantic.min.css">
+  <style type="text/css">
+      body {
+          font-family: 'Open Sans', sans-serif !important;
+      }
+  </style>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="container pushable">
+      <div class="ui piled segment">
+          <h1>User 2 notification</h1>
+      </div>
+      <div class="ui icon message">
+          <i class="inbox icon"></i>
+
+          <div class="content">
+              <div class="header">
+                  Here is your notifications
+              </div>
+              <ul class="list" id="notifications">
+                  <li id="private">private channel</li>
+                  <li id="public">public channel</li>
+                  <li id="news_private">news</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+<script>
+  var chat = io.connect('http://localhost:9000/chat')
+    , news = io.connect('http://localhost:9000/news');
+
+  chat.on('public', function (data) {
+    console.log('connected to chat namespace')
+    document.getElementById('public').innerHTML = data.message
+    // console.log(data)
+    // chat.emit('my other event', { my: 'data' });
+  });
+
+  chat.on('user2', function (data) {
+    console.log('connected to chat namespace')
+    console.log(data)
+    document.getElementById('private').innerHTML = data.message
+    // console.log(data)
+    // chat.emit('my other event', { my: 'data' });
+  });
+
+  news.on('private', function (data) {
+    console.log('connected to news namespace')
+    console.log(data)
+    document.getElementById('news_private').innerHTML = data.message
+  });
+</script>
+</body>
+</html>

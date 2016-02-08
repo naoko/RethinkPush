@@ -1,0 +1,8 @@
+.idea/*
+rethinkdb_data/*
+node_modules/*
+*.log
+venv/*
+*.egg*
+*.egg
+*.pyc

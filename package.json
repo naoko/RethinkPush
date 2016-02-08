@@ -1,0 +1,28 @@
+{
+  "name": "rethinkdb-socketio",
+  "version": "1.0.0",
+  "description": "notification service powered by socket.io and rethinkdb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naoko/realpush.git"
+  },
+  "keywords": [
+    "rethinkdb",
+    "socket.io"
+  ],
+  "author": "naoko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naoko/realpush/issues"
+  },
+  "homepage": "https://github.com/naoko/realpush#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "rethinkdb": "^2.2.1",
+    "socket.io": "^1.4.5"
+  }
+}

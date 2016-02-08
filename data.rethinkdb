@@ -1,0 +1,27 @@
+r.db('notification').table('messages').insert({
+	'namespace': 'chat',
+  'channel': 'public',
+  'message': 'Ahoy from RethinkDB'
+});
+
+r.db('notification').table('messages').insert({
+	'namespace': 'chat',
+  'channel': 'user1',
+  'message': 'Ahoy! from RethinkDB for user1 only'
+});
+
+r.db('notification').table('messages').insert({
+	'namespace': 'chat',
+  'channel': 'user2',
+  'message': 'Ahoy! from RethinkDB for user 2 only'
+});
+
+r.db('notification').table('messages').insert({
+	'namespace': 'news',
+  'channel': 'user1',
+  'message': 'News from RethinkDB for user1 only'
+});
+
+r.db('notification').table('messages')
+
+r.db('notification').table('messages').delete({returnChanges: false})
