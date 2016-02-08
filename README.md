@@ -54,8 +54,10 @@ r.db('notification').table('messages').insert({
 
 ```
 
+
 ### Roadmap
-* add test
+* add more test
+* production provisioning with [pm2](https://github.com/Unitech/pm2)
 * add ts_to_send for scheduled notification
 	* add filter on changes query
 * primitive authentication

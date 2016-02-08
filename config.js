@@ -2,7 +2,8 @@ var config = {};
 
 config.port = {
   'test': 9001,
-  'development': 9000
+  'development': 9000,
+  'production': 9000
 };
 
 config.rethinkDB = {

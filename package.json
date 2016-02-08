@@ -6,20 +6,24 @@
   "scripts": {
     "test": "node_modules/.bin/mocha tests/spec.js"
   },
+  "engines": {
+    "node": "5.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/naoko/realpush.git"
   },
   "keywords": [
     "rethinkdb",
-    "socket.io"
+    "socket.io",
+    "realtime"
   ],
   "author": "naoko",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/naoko/realpush/issues"
+    "url": "https://github.com/naoko/rethink-push/issues"
   },
-  "homepage": "https://github.com/naoko/realpush#readme",
+  "homepage": "https://github.com/naoko/rethink-push/#readme",
   "dependencies": {
     "express": "^4.13.4",
     "rethinkdb": "^2.2.1",
