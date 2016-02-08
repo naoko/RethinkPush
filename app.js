@@ -3,21 +3,16 @@ var http = require('http')
 var socketio = require('socket.io')
 var r = require("rethinkdb");
 
+var routes = require('./routes/index.js');
 var db = require("./database.js")
 var config = require('./config');
 
 var app = express();
+app.use('/', routes);
 var server = http.createServer(app);
 var io = socketio(server);
 
 server.listen(config.port);
-
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
-app.get('/user2', function(req, res){
-  res.sendFile(__dirname + '/index2.html');
-});
 
 var chat = io.of('/chat')
 var news = io.of('/news')
