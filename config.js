@@ -1,6 +1,9 @@
 var config = {};
 
-config.port = 9000
+config.port = {
+  'test': 9001,
+  'development': 9000
+}
 config.rethinkDB = {
   host: 'docker.local.io',
   port: '28016'

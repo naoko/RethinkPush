@@ -8,12 +8,15 @@ var db = require("./database.js")
 var config = require('./config');
 
 var app = express();
+
 app.use('/', routes);
 var server = http.createServer(app);
 var io = socketio(server);
 
-server.listen(config.port);
+server.listen(config.port[app.settings.env]);
 
 var chat = io.of('/chat')
 var news = io.of('/news')
 db.startServer(server, config.rethinkDB, {'chat': chat, 'news': news})
+
+module.exports = app;

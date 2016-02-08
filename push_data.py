@@ -2,7 +2,6 @@ import rethinkdb as r
 
 conn = r.connect("docker.local.io", 28015)
 
-
 class Table(object):
     notification = 'events'
     user = 'users'

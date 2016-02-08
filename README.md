@@ -1,12 +1,9 @@
 # RethinkPush with RethinkDB + socket.io
 
-* Use of RethinkDB Changefeeds for Realtime
-* RethinkPush is service to aid Websocket
-
+* Use of RethinkDB Changefeeds for Realtime messaging
 
 ## How does it work
 view in [stackedit.io](https://stackedit.io/editor)
-
 
 **direct**
 
@@ -39,6 +36,13 @@ RethinkPush-->Client: push data
 > **RethinkPush**: push notification service
 > **RethinkDB**: JSON doc storage (in lieu of Firebase)
 
+## for testing
+```bash
+npm install -g mocha
+npm install
+npm test
+```
+
 ## data schema
 ```bash
 
@@ -61,5 +65,6 @@ r.db('notification').table('messages').insert({
 	* subscription level authentication
 
  ref:
- http://expressjs.com/
- https://rethinkdb.com/blog/realtime-cluster-monitoring/
+ * [expressjs](http://expressjs.com/)
+ * [rethinkdb](https://rethinkdb.com/blog/realtime-cluster-monitoring/)
+ * [chai](http://chaijs.com/)

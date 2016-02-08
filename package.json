@@ -1,10 +1,10 @@
 {
   "name": "rethinkdb-socketio",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "notification service powered by socket.io and rethinkdb",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha tests/spec.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
     "express": "^4.13.4",
     "rethinkdb": "^2.2.1",
     "socket.io": "^1.4.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1"
   }
 }
