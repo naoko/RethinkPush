@@ -8,8 +8,8 @@ router.get('/', function(req, res){
   res.sendFile(publicDir + '/index.html');
 })
 
-router.get('/user2', function(req, res){
-  res.sendFile(publicDir + '/index2.html');
+router.get('/user:id', function(req, res){
+  res.sendFile(publicDir + '/index' + req.params.id + '.html');
 });
 
 module.exports = router;

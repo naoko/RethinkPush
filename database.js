@@ -1,8 +1,9 @@
 var r = require("rethinkdb");
 const assert = require('assert');
+var config = require('./config');
 
-var dbName = 'notification'
-var dbTable = 'messages'
+var dbName = config.db.name
+var dbTable = config.db.table
 
 this.startServer = function(server, rConn, namespaces) {
   r.connect(rConn)

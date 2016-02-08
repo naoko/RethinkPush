@@ -26,6 +26,11 @@ data = [
        'message': 'Ahoy! from RethinkDB for user 2 only {}'
     },
     {
+	   'namespace': 'chat',
+       'channel': 'user3',
+       'message': 'Ahoy! from RethinkDB for user 3 only {}'
+    },
+    {
 	   'namespace': 'news',
        'channel': 'private',
        'message': 'News from RethinkDB {}'
@@ -34,9 +39,9 @@ data = [
 for i in range(100):
     time.sleep(0.1)
     print("running {}".format(i))
-    rd = gen_str()
     for d in data:
         c = d.copy()
+        rd = gen_str()
         c.update({'message': c['message'].format(rd)})
         r.db('notification').table('messages').insert(c).run(conn)
 

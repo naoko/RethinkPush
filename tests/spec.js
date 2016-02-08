@@ -17,7 +17,7 @@ describe('router', function() {
         res.should.have.status(404);
         done();
       })
-  })
+  });
 
   it('should serve index page ok', function (done) {
     chai.request(server)
@@ -28,5 +28,19 @@ describe('router', function() {
         res.should.be.html;
         done();
       })
-  })
+  });
+
+  [2, 3].forEach(function (itemNumber) {
+    it('should serve /user' + itemNumber + ' page ok', function (done) {
+      chai.request(server)
+        .get('/user' + itemNumber)
+        .end(function(err, res) {
+          should.equal(err, null);
+          res.should.have.status(200);
+          res.should.be.html;
+          done();
+        })
+    })
+  });
+
 });
