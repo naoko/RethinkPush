@@ -50,7 +50,7 @@ var initDB = function(conn, namespaces) {
             socket.emit(data.channel, {message: data.message});
             r.db(dbName).table(dbTable).filter({'id': data.id}).delete({returnChanges: false}).run(conn)
           } else {
-            // must be delete event
+            // must be deleted event
           }
         } else {
           // handle error
